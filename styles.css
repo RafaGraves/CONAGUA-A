@@ -1,0 +1,239 @@
+/* *******************************************
+           Colores oficiales
+*******************************************
+
+gob-de-mexico-container  : #10312b	Verde oscuro
+menu-gobierno                 :  #235b4e	Verde claro
+logo-conagua-container    : #ddc9a3	Oro claro
+
+Colores CONAGUA
+
+Oro  claro  :  #B38E5D    Oro oscuro  : #bc955c
+Azul  claro  :  #3D7CC9   Azul oscuro  :  #1C355E
+          Gris  :  #4F4F4F
+
+**********
+
+Negro al 70%  :  #4d4d4d	  Negro  al 50%  : #808080	 Negro al 20% : #cccccc
+       Gris claro  :  #98989a	  Gris  oscuro :      #6f7271
+     Rojo claro  :  #9f2241	      Rojo oscuro :     #691c32 */
+:root {
+    --padding-left-right: 10px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+/* contenido de header */
+
+.header-conagua {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.gobierno-de-mexico-container {
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    background-color: #10312b;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.gobierno-de-mexico-container img {
+    padding: 0;
+    margin: 0;
+    width: 180px;
+    height: 50px;
+    flex-basis: 0;
+    margin-left: 2%;
+}
+
+.conagua-logo-container {
+    width: 100%;
+    background-color: #235b4e;
+    display: flex;
+    flex-shrink: 0;
+}
+
+.conagua-logo-container img {
+    width: 100%;
+}
+
+/* here ends header content */
+
+/* this is the log-in content */
+
+.log-in-content {
+    width: 100%;
+    position: relative;
+    padding: 64px 0 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+
+.log-in-container h2 {
+    padding-bottom: 10px;
+    color: white;
+    letter-spacing: .05em;
+}
+
+.log-in-container {
+    width: 500px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #5f9d8e;
+    border-radius: 5%;
+}
+
+
+.items {
+    position: relative;
+    margin: 20px 0 30px;
+}
+
+input {
+    outline: none;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1.5px solid rgb(0, 0, 0, 0.4);
+    height: 40px;
+    width: 300px;
+    padding: 0 var(--padding-left-right);
+    font-size: 20px;
+    background: transparent;
+}
+
+.placeholder {
+    position: absolute;
+    top: 50%;
+    left: var(--padding-left-right);
+    transform: translate(0, -50%);
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    transition: all 170ms ease;
+}
+
+input:focus+.placeholder,
+.active {
+    top: -15px;
+    left: 2px;
+    color: white;
+    font-size: 18px;
+}
+
+.items::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 1.5px;
+    background: hsl(0, 0%, 100%);
+    transform-origin: left;
+    transition: all 200ms ease;
+    transform: scaleX(0%);
+}
+
+.items:focus-within::after {
+    transform: scaleX(100%);
+}
+
+.forgot-password-button {
+    padding: 20px 0 40px;
+    text-decoration: underline;
+    color: lightgrey;
+}
+
+.log-in-button {
+    padding: 15px 40px;
+    background-color: transparent;
+    font-family: 'Mukta', sans-serif;
+    font-size: 1.1em;
+    color: white;
+    border: solid 1px white;
+    border-radius: 4%;
+    margin-top: 15px;
+    transition: all .2s ease-in-out;
+}
+
+.log-in-button:hover {
+    border-color: #dbae6b;
+    color: #e4ab4f;
+    transform: translateY(-1px);
+    box-shadow: -3px 26px 37px -11px rgba(66, 66, 66, 0.53);
+    -webkit-box-shadow: -3px 26px 37px -11px rgba(18, 18, 18, 0.53);
+    -moz-box-shadow: -3px 26px 37px -11px rgba(18, 18, 18, 0.53);
+}
+
+/* here ends the login content */
+/* this is all the horizontal navbar */
+
+.navbar-navigation {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background-color: #bc955c;
+    flex-basis: 0;
+    gap: 1rem;
+}
+.navbar-navigation ul li {
+    display: inline-block;
+    list-style: none;
+    padding: 20px;
+    margin-right: 50px;
+}
+.navbar-navigation a {
+    text-decoration: none;
+    padding: 20px;
+    color: white;
+    transition: all .2s ease-in-out;
+}
+.navbar-navigation, .active a:hover {
+    color: black;
+}
+
+label.conagua-logo-nav {
+    font-size: 2rem;
+    color: white;
+    font-weight: 700;
+    padding: 0 100px;
+    position: absolute;
+    left: 5px;
+}
+
+/* here ends navbar/*
+
+ /* this is the footer */
+
+.footer-login {
+    width: 100%;
+    height: 80px;
+    padding-top: 64px;
+    background-color: #bc955c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 0;
+}
+
+.footer-login img {
+    width: 200px;
+    margin-bottom: 50px;
+}

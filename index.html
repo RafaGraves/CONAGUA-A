@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Log-In-Conagua</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&family=Mukta:wght@300;400;700&family=Space+Grotesk:wght@400;500;600;700&family=Ubuntu:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <section class="header-conagua">
+        <div class="gobierno-de-mexico-container">
+            <img src="images/images-conagua/gobierno-de-mexico-scaled.png">
+        </div>
+        <div class="conagua-logo-container">
+            <img src="images/images-conagua/medio-ambiente-conagua.png">
+        </div>
+    </section>
+    <header>
+        <nav class="navbar-navigation" id="navbar-hor">
+            <label class="conagua-logo-nav">CONAGUA</label>
+            <ul>
+                <li class="status-active"><a href="#">Pull</li></a>
+                <li class="status-active"><a href="#">Combustible</li></a>
+                <li class="status-active"><a href="#">Tenencia</li></a>
+                <li class="status-active"><a href="#">Something</li></a>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+
+
+ var header = document.getElementById("navbar-hor");
+ var btns = header.getElementsByClassName("status-active");
+
+for (var i = 0; i < btns.length; i++) {
+     btns[i].addEventListener('click', function(e){
+        var current = document.getElementsByClassName("active");
+        current[0].classList.remove('active');
+        this.classList.add('active');
+        var array = [];
+        array.push(btns);
+        localStorage.setItem('element', this.innerText);
+     });
+}
+
+    function setActivatedItem(){
+        var item = localStorage.getItem('element');
+
+        if(item){
+            for (var a = 0; a < btns.length; a++) {
+                if(btns[a].innerText == item){
+                    btns[a].classList.add('active');
+                }else{
+                    btns[a].classList.remove('active');
+                }
+            }
+        }
+    }
+
+    window.onload == setActivatedItem();
+
+</script>
+</body>
+
+</html>
